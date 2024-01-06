@@ -25,4 +25,15 @@
 body {
   background: #F4EBDC;
   margin: 0px;
+  font-family: Flame Sans;
+}
+
+h1 {
+  font-family: Flame;
+  font-weight: 600;
+}
+
+h2 {
+  font-family: Flame;
+  font-weight: 400;
 }
