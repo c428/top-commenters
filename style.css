@@ -18,7 +18,7 @@ a {
     width: fit-content;
     font-size: 10vw;
     text-align: center;
-    font-family: Noto Sans TC;
+    font-family: Inter;
     font-weight: 700;
     color: white;
 }
@@ -92,7 +92,6 @@ select {
     width: fit-content;
     font-size: 10vw;
     margin: 0;
-    margin-top: .9vw;
     text-align: center;
     font-family: Inter;
     font-weight: 700;
@@ -103,4 +102,9 @@ select {
     width: 100%;
     display: flex;
     justify-content: center;
+}
+
+.footer {
+    color: #fff4;
+    margin: .5vw;
 }
