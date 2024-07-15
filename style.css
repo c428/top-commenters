@@ -92,8 +92,9 @@ select {
     width: fit-content;
     font-size: 10vw;
     margin: 0;
+    margin-top: .9w;
     text-align: center;
-    font-family: Noto Sans TC;
+    font-family: Inter;
     font-weight: 700;
     color: #fff4;
 }
