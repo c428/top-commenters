@@ -4,15 +4,18 @@ const ckr = document.getElementById('checker');
 const iconyes = document.getElementById("check");
 const iconno = document.getElementById("cancel");
 const divc = document.getElementById("divchecker");
+const select = document.getElementById("characters");
 
 async function getData() {
     let result = '';
     const start = 0x4E00;
     const end = 0x9FFF;
-    const size = 1;
+    const size = select.value;
 
-    const randomCode = Math.floor(Math.random() * (end - start + 1)) + start;
-    result += String.fromCharCode(randomCode);
+    for (let i = 0; i < size; i++) {
+        const randomCode = Math.floor(Math.random() * (end - start + 1)) + start;
+        result += String.fromCharCode(randomCode);
+    }
 
     char.innerHTML = result;
 
