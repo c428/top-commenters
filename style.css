@@ -15,6 +15,7 @@ a {
 
 .char {
     display: block;
+    width: fit-content;
     font-size: 10vw;
     text-align: center;
     font-family: Noto Sans TC;
@@ -88,6 +89,7 @@ select {
 
 .charat {
     display: block;
+    width: fit-content;
     font-size: 10vw;
     margin: 0;
     text-align: center;
@@ -98,4 +100,6 @@ select {
 
 .charcon {
     width: 100%;
+    display: flex;
+    text-align: center;
 }
