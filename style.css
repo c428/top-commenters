@@ -6,7 +6,7 @@ body {
     align-content: center;
     justify-content: center;
     font-family: Inter;
-    background: rgb(26, 26, 32);
+    background: rgb(22, 22, 28)
 }
 
 a {
@@ -59,7 +59,7 @@ button {
     border: none;
     color: white;
     font-family: Inter;
-    background: rgb(34, 34, 42);
+    background: rgb(30, 30, 40);
     border-radius: 1vw;
     transition: .5s;
 }
