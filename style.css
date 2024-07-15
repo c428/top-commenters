@@ -108,3 +108,16 @@ select {
     color: #fff4;
     margin: .5vw;
 }
+
+.mainh1 {
+    background: -webkit-linear-gradient(#bfe6f5, #1e60d9, #070738);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: block;
+    width: fit-content;
+    font-size: 10vw;
+    text-align: center;
+    font-family: Inter;
+    font-weight: 700;
+    color: white;
+}
