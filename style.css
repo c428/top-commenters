@@ -16,7 +16,6 @@ a {
 .char {
     display: block;
     font-size: 10vw;
-    width: 100%;
     text-align: center;
     font-family: Noto Sans TC;
     font-weight: 700;
@@ -87,12 +86,16 @@ select {
     transition: .5s;
 }
 
-.char {
+.charat {
     display: block;
     font-size: 10vw;
-    width: 100%;
+    margin: 0;
     text-align: center;
     font-family: Inter;
     font-weight: 700;
     color: #fff4;
+}
+
+.charcon {
+    width: 100%;
 }
