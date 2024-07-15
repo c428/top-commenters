@@ -114,7 +114,7 @@ select {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: block;
-    width: fit-content;
+    width: 100%;
     font-size: 10vw;
     text-align: center;
     font-family: Inter;
