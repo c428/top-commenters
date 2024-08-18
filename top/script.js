@@ -1,4 +1,4 @@
-document.getElementById("bought").value = localStorage.getItem("set");
+document.getElementById("bought").value = sessionStorage.set
 
 const channels = [
   "UCPW_cNzrDSf0xejLOKvV7Cg",
