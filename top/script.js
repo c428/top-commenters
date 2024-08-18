@@ -1,3 +1,5 @@
+document.getElementById("bought").value = localStorage.getItem("set");
+
 const channels = [
   "UCPW_cNzrDSf0xejLOKvV7Cg",
   "UC775DwuDDYTrMRNzAcjcVbw",
@@ -144,4 +146,9 @@ async function fetchData() {
   }
   document.getElementById("Loading").style.display = "none";
   document.getElementById("clist").style.display = "flex";
+}
+
+function refresh(){
+  sessionStorage.setItem("set", document.getElementById("bought").value);
+  window.location.href = window.location.href;
 }
