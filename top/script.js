@@ -27,6 +27,7 @@ const channels = [
   "UCZsVjiMSN9Y2s3gFnMNwxqg",
   "UC3RIcfnBQinhnhKHCIEA16Q",
   "UC7G_LkTLLqeeFVjq0Ry9XQQ",
+  "UCneVuxEgu48a1moXu8ifihQ",
 ];
 
 function numberWithCommas(x) {
