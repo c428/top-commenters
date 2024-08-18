@@ -1,4 +1,8 @@
-document.getElementById("bought").value = sessionStorage.set
+if (sessionStorage.set != null) {
+  document.getElementById("bought").value = sessionStorage.set
+} else {
+  document.getElementById("bought").value = "Show"
+}
 
 const channels = [
   "UCPW_cNzrDSf0xejLOKvV7Cg",
