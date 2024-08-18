@@ -1,7 +1,7 @@
 if (sessionStorage.set != null) {
-  document.getElementById("bought").value = sessionStorage.set
+  document.getElementById("bought").value = sessionStorage.set;
 } else {
-  document.getElementById("bought").value = "Show"
+  document.getElementById("bought").value = "Show";
 }
 
 const channels = [
@@ -47,6 +47,8 @@ async function fetchData() {
   document.getElementById("Loading").style.display = "block";
   const Array = [];
   for (let i = 0; i < channels.length; i++) {
+    document.getElementById("Loading").innerHTML =
+      [i + 1] + "/" + channels.length + " channels fetched.";
     try {
       const response = await fetch(
         "https://backend.mixerno.space/api/youtube/estv3/" + channels[i]
@@ -113,6 +115,8 @@ async function fetchData() {
         '</p><p style="margin:0;margin-top:0.2vw;font-size:2vw;font-weight:600;">' +
         numberWithCommas(channelSubs[i]) +
         "</span></div>";
+      document.getElementById("Loading").innerHTML =
+        [i + 1] + "/" + channels.length + " channels loaded.";
     }
   } else {
     let j = 0;
@@ -144,6 +148,8 @@ async function fetchData() {
           numberWithCommas(channelSubs[i]) +
           "</span></div>";
         j++;
+        document.getElementById("Loading").innerHTML =
+          [j + 1] + "/" + channels.length + " channels loaded.";
       } else {
       }
     }
