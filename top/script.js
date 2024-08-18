@@ -148,7 +148,7 @@ async function fetchData() {
   document.getElementById("clist").style.display = "flex";
 }
 
-function refresh(){
+function refresh() {
   sessionStorage.setItem("set", document.getElementById("bought").value);
   window.location.href = window.location.href;
 }
