@@ -63,11 +63,9 @@ async function fetchData() {
       if (
         data.items[0].snippet.title == "Chicken" ||
         data.items[0].snippet.title == "x" ||
-        data.items[0].snippet.title == "RabbitsOnTheRoad" ||
         data.items[0].snippet.title == "New 247" ||
         data.items[0].snippet.title == "Peely" ||
-        data.items[0].snippet.title == "Pig" ||
-        data.items[0].snippet.title == "Odurs"
+        data.items[0].snippet.title == "Pig"
       ) {
         Array.push({
           id: channels[i],
