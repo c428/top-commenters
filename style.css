@@ -44,9 +44,11 @@ a {
 }
 
 .buttons {
+    display: flex;
     width: 100%;
     margin: 1vw;
     text-align: center;
+    justify-content: center;
 }
 
 button {
