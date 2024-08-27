@@ -115,7 +115,7 @@ select {
 }
 
 .mainh1 {
-    background: -webkit-linear-gradient(#0032b7, #0aabff, #14efc8)
+    background: -webkit-linear-gradient(#0032b7, #0aabff, #14efc8);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: block;
