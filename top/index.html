@@ -5,7 +5,8 @@
     <meta content="#FFFFFF" data-react-helmet="true" name="theme-color" />
     <head>
         <title>Top Commenters</title>
-        <link rel="stylesheet" href="/style.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
         <link rel="icon" type="image/x-icon" href="https://c428.github.io/files/comment.ico">
     </head>
     <body>
@@ -17,11 +18,22 @@
                 <option value="Show">Show Bought Channels</option>
                 <option value="Hide">Hide Bought Channels</option>
             </select>
+            <button onclick="refresh()" class="refresh"><span class="material-symbols-sharp">refresh</span></button>
         </div>
-        <button onclick="refresh()">Refresh</button>
         <h1 class="loading" id="Loading">
             Loading...
         </h1>
+        <div class="top3" id="top3">
+            <div class="outer" id="outersecond">
+                <div class="second" id="second"></div>
+            </div>
+            <div class="outer" id="outerfirst">
+                <div class="first" id="first"></div>
+            </div>
+            <div class="outer" id="outerthird">
+                <div class="third" id="third"></div>
+            </div>
+        </div>
         <div class="channels" id="clist"></div>
         <div style="display:flex;width:100%;justify-content:center;">
             <p class="footer" style="margin-right:0;">Don't see a commenter you know? Let us know</p>
