@@ -40,7 +40,6 @@ a {
   'GRAD' 0,
   'opsz' 24;
   font-size: 1.4vw !important;
-  padding-right: .5vw;
 }
 
 .buttons {
@@ -132,12 +131,12 @@ select {
 
 .ui {
     display: flex;
-    width: 30vw;
+    width: 35vw;
     height: auto;
     align-items: center;
     margin: .5vw;
     font-size: 1vw;
-    padding: 1vw;
+    padding: .5vw;
     border-radius: 2vw;
     background: rgb(33, 33, 42);
     color: white;
@@ -147,7 +146,7 @@ select {
     width: 6vw;
     height: 6vw;
     border-radius: 50%;
-    margin-right: .7vw;
+    margin: .5vw;
     transition: .6s;
     -o-transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
@@ -182,13 +181,80 @@ select {
 }
 
 .input {
+    display: flex;
+    justify-content: center;
     width: 100%;
     text-align: center;
     margin: 1vw;
     font-size: 1vw;
 }
 
+.refresh {
+    width: 1vw;
+    height: 1vw;
+}
+
 .channelinfo {
     display: flex;
     flex-direction: column;
+}
+
+.top3 {
+    display: none;
+    width: 100%;
+    height: fit-content;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.first {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: flex-start;
+    background: #f3ae007b;
+    width: 13vw;
+    height: 15vw;
+    border-radius: 2vw;
+    margin: .5vw;
+    padding: .5vw;
+}
+
+.second {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: flex-start;
+    background: #6363677b;
+    width: 13vw;
+    height: 10vw;
+    border-radius: 2vw;
+    margin: .5vw;
+    padding: .5vw;
+    color: white;
+}
+
+.third {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: flex-start;
+    background: #6b3a027b;
+    width: 13vw;
+    height: 10vw;
+    border-radius: 2vw;
+    margin: .5vw;
+    padding: .5vw;
+    color: white;
+}
+
+.outer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: flex-end;
+    color: white;
 }
