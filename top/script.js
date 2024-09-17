@@ -201,7 +201,7 @@ async function fetchData() {
       const data = await response.json();
       if (channelBought[i] == "False") {
         const pfp = data.items[0].snippet.thumbnails.default.url;
-      if ([i] == 0) {
+      if ([j] == 0) {
         var div1 = document.getElementById("outerfirst");
         var div2 = document.createElement("div");
         div2.className = "first";
@@ -221,7 +221,7 @@ async function fetchData() {
           "</span></div>";
         document.getElementById("Loading").innerHTML =
           [i + 1] + "/" + channels.length + " channels loaded.";
-      } else if ([i] == 1) {
+      } else if ([j] == 1) {
         var div1 = document.getElementById("outersecond");
         var div2 = document.createElement("div");
         div2.className = "second";
@@ -241,7 +241,7 @@ async function fetchData() {
           "</span></div>";
         document.getElementById("Loading").innerHTML =
           [i + 1] + "/" + channels.length + " channels loaded.";
-      } else if ([i] == 2) {
+      } else if ([j] == 2) {
         var div1 = document.getElementById("outerthird");
         var div2 = document.createElement("div");
         div2.className = "third";
