@@ -30,6 +30,10 @@ const channels = [
   "UCneVuxEgu48a1moXu8ifihQ",
   "UCiBwUTzU7RmyY-T8C6bE5cQ",
   "UCmkuII8NHjDqnU2rJTQrKgg",
+  "UCeDSghsyAtM2B1WezvMcOXw",
+  "UCksoVekEVuQihFOdMoRqTnw",
+  "UCTwXQXZZ2y37NbDo7PZ_WSQ",
+  "UCuaY85j20IAEviKBYsqNxoQ",
 ];
 
 function numberWithCommas(x) {
@@ -67,7 +71,9 @@ async function fetchData() {
         data.items[0].snippet.title == "x" ||
         data.items[0].snippet.title == "New 247" ||
         data.items[0].snippet.title == "Peely" ||
-        data.items[0].snippet.title == "Pig"
+        data.items[0].snippet.title == "Pig" ||
+        data.items[0].snippet.title == "Odurs" ||
+        data.items[0].snippet.title == "RabbitsOnTheRoad"
       ) {
         Array.push({
           id: channels[i],
@@ -100,24 +106,86 @@ async function fetchData() {
       );
       const data = await response.json();
       const pfp = data.items[0].snippet.thumbnails.default.url;
-      var div = document.createElement("div");
-      document.getElementById("clist").appendChild(div);
-      div.className = "ui";
-      div.id = "channel" + [i];
-      div.innerHTML =
-        '<a href="https://www.youtube.com/channel/' +
-        channelIds[i] +
-        '"><img class="pfp" src="' +
-        pfp +
-        '"></img></a><div class="channelinfo"><p style="margin:0;">' +
-        [i + 1] +
-        ". " +
-        channelNames[i] +
-        '</p><p style="margin:0;margin-top:0.2vw;font-size:2vw;font-weight:600;">' +
-        numberWithCommas(channelSubs[i]) +
-        "</span></div>";
-      document.getElementById("Loading").innerHTML =
-        [i + 1] + "/" + channels.length + " channels loaded.";
+      if ([i] == 0) {
+        var div1 = document.getElementById("outerfirst");
+        var div2 = document.createElement("div");
+        div2.className = "first";
+        div2.id = "first";
+        div1.innerHTML =
+          '<p style="margin:0.5vw;font-weight:600;">1st</p><a href="https://www.youtube.com/channel/' +
+          channelIds[i] +
+          '"><img class="pfp" style="outline:white solid .3vw;" src="' +
+          pfp +
+          '"></img></a>';
+        document.getElementById("outerfirst").appendChild(div2);
+        div2.innerHTML =
+          '<div class="channelinfo"><p style="margin:0;font-weight:600;">' +
+          channelNames[i] +
+          '</p><p style="margin:0;margin-top:0.2vw;font-size:2vw;font-weight:800;">' +
+          numberWithCommas(channelSubs[i]) +
+          "</span></div>";
+        document.getElementById("Loading").innerHTML =
+          [i + 1] + "/" + channels.length + " channels loaded.";
+      } else if ([i] == 1) {
+        var div1 = document.getElementById("outersecond");
+        var div2 = document.createElement("div");
+        div2.className = "second";
+        div2.id = "second";
+        div1.innerHTML =
+          '<p style="margin:0.5vw;font-weight:600;">2nd</p><a href="https://www.youtube.com/channel/' +
+          channelIds[i] +
+          '"><img class="pfp" style="outline:white solid .3vw;" src="' +
+          pfp +
+          '"></img></a>';
+        document.getElementById("outersecond").appendChild(div2);
+        div2.innerHTML =
+          '<div class="channelinfo"><p style="margin:0;font-weight:600;">' +
+          channelNames[i] +
+          '</p><p style="margin:0;margin-top:0.2vw;font-size:2vw;font-weight:800;">' +
+          numberWithCommas(channelSubs[i]) +
+          "</span></div>";
+        document.getElementById("Loading").innerHTML =
+          [i + 1] + "/" + channels.length + " channels loaded.";
+      } else if ([i] == 2) {
+        var div1 = document.getElementById("outerthird");
+        var div2 = document.createElement("div");
+        div2.className = "third";
+        div2.id = "third";
+        div1.innerHTML =
+          '<p style="margin:0.5vw;font-weight:600;">3rd</p><a href="https://www.youtube.com/channel/' +
+          channelIds[i] +
+          '"><img class="pfp" style="outline:white solid .3vw;" src="' +
+          pfp +
+          '"></img></a>';
+        document.getElementById("outerthird").appendChild(div2);
+        div2.innerHTML =
+          '<div class="channelinfo"><p style="margin:0;font-weight:600;">' +
+          channelNames[i] +
+          '</p><p style="margin:0;margin-top:0.2vw;font-size:2vw;font-weight:800;">' +
+          numberWithCommas(channelSubs[i]) +
+          "</span></div>";
+        document.getElementById("Loading").innerHTML =
+          [i + 1] + "/" + channels.length + " channels loaded.";
+      } else {
+        var div = document.createElement("div");
+        document.getElementById("clist").appendChild(div);
+        div.className = "ui";
+        div.id = "channel" + [i];
+        div.innerHTML =
+          '<a href="https://www.youtube.com/channel/' +
+          channelIds[i] +
+          '"><img class="pfp" src="' +
+          pfp +
+          '"></img></a><div class="channelinfo"><p style="margin:0;">' +
+          [i + 1] +
+          ". " +
+          channelNames[i] +
+          '</p><p style="margin:0;margin-top:0.2vw;font-size:2vw;font-weight:800;">' +
+          numberWithCommas(channelSubs[i]) +
+          "</span></div>";
+        document.getElementById("Loading").innerHTML =
+          [i + 1] + "/" + channels.length + " channels loaded.";
+      }
     }
   } else {
     let j = 0;
@@ -157,6 +225,7 @@ async function fetchData() {
   }
   document.getElementById("Loading").style.display = "none";
   document.getElementById("clist").style.display = "flex";
+  document.getElementById("top3").style.display = "flex";
 }
 
 function refresh() {
