@@ -9,6 +9,10 @@ body {
     background: rgb(25, 25, 32);
 }
 
+p {
+    font-size: 1vw;
+}
+
 a {
     color: rgb(255, 255, 255);
 }
