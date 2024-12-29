@@ -69,13 +69,13 @@ async function fetchData() {
 
       const data = await response.json();
       if (
-        data.items[0].snippet.title == "Chicken" ||
-        data.items[0].snippet.title == "x" ||
-        data.items[0].snippet.title == "New 247" ||
-        data.items[0].snippet.title == "Peely" ||
-        data.items[0].snippet.title == "Pig" ||
-        data.items[0].snippet.title == "Odurs" ||
-        data.items[0].snippet.title == "RabbitsOnTheRoad"
+        data.items[0].id == "UCuMjCvjZ9d2s4ZakmyxL4fQ" ||
+        data.items[0].id == "UCvu_BE1wWyjatsMIwUPTjHA" ||
+        data.items[0].id == "UCWSx4PUbGLZA9hvWZmrimzw" ||
+        data.items[0].id == "UCU-Xk8vOheoXN67TXVjoxvQ" ||
+        data.items[0].id == "UCa6S_fqxm8iGaRywGcgShEg" ||
+        data.items[0].id == "UCPp8olIs1fgWwRHlzv-tcUA" ||
+        data.items[0].id == "UCMO5JPRfP-AwI7kB0F8RAXw"
       ) {
         Array.push({
           id: channels[i],
