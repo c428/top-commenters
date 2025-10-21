@@ -14,6 +14,7 @@ const channels = [
   "UCiBwUTzU7RmyY-T8C6bE5cQ", // NeoRacer
 ];
 
+// Utility Functions
 const numberWithCommas = x =>
   x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
@@ -23,19 +24,18 @@ function getOrdinal(n) {
   return suffixes[(v - 20) % 10] || suffixes[v] || "th";
 }
 
+// Fetch and Render
 async function fetchData() {
   const loading = document.getElementById("Loading");
   const clist = document.getElementById("clist");
-  const top3 = document.getElementById("top3");
 
   // Reset UI
   clist.innerHTML = "";
   clist.style.display = "none";
   loading.style.display = "block";
-  top3.style.display = "none";
 
   try {
-    // Fetch all channels at the same time
+    // Fetch all channels in parallel
     const results = await Promise.all(
       channels.map(async (id, index) => {
         loading.textContent = `${index + 1}/${channels.length} channels fetched...`;
@@ -54,7 +54,7 @@ async function fetchData() {
           };
         } catch (err) {
           console.warn(`⚠️ Failed to load ${id}`, err);
-          return null; // Skip channel
+          return null; // skip broken channel
         }
       })
     );
@@ -65,42 +65,21 @@ async function fetchData() {
     // Sort by subscriber count
     const sorted = validResults.sort((a, b) => b.subs - a.subs);
 
-    // Render channels
-    renderTopThree(sorted.slice(0, 3));
-    renderList(sorted.slice(3));
-
+    // Render all channels in one list
+    renderList(sorted);
   } catch (err) {
     console.error("Error fetching channels:", err);
   } finally {
     loading.style.display = "none";
     clist.style.display = "flex";
-    top3.style.display = "flex";
   }
 }
 
-function renderTopThree(top) {
-  const ranks = ["first", "second", "third"];
-  top.forEach((ch, i) => {
-    const container = document.getElementById(`outer${ranks[i]}`);
-    if (!container) return;
-
-    container.innerHTML = `
-      <p style="margin:0.5vw;font-weight:600;">${i + 1}${getOrdinal(i + 1)}</p>
-      <a href="https://www.youtube.com/channel/${ch.id}" target="_blank">
-        <img class="pfp" style="outline:white solid .3vw;" src="${ch.pfp}" alt="${ch.name}" />
-      </a>
-      <div class="channelinfo">
-        <p style="margin:0;font-weight:600;">${ch.name}</p>
-        <p style="margin:0;margin-top:0.2vw;font-size:2vw;font-weight:800;">
-          ${numberWithCommas(ch.subs)}
-        </p>
-      </div>
-    `;
-  });
-}
-
+// Render Function
 function renderList(channels) {
   const clist = document.getElementById("clist");
+  clist.innerHTML = ""; // Clear any existing content
+
   channels.forEach((ch, i) => {
     const div = document.createElement("div");
     div.className = "ui";
@@ -109,7 +88,7 @@ function renderList(channels) {
         <img class="pfp" src="${ch.pfp}" alt="${ch.name}" />
       </a>
       <div class="channelinfo">
-        <p style="margin:0;">${i + 4}. ${ch.name}</p>
+        <p style="margin:0;">${i + 1}${getOrdinal(i + 1)}. ${ch.name}</p>
         <p style="margin:0;margin-top:0.2vw;font-size:2vw;font-weight:800;">
           ${numberWithCommas(ch.subs)}
         </p>
@@ -119,4 +98,5 @@ function renderList(channels) {
   });
 }
 
+// === Run on Load ===
 fetchData();
