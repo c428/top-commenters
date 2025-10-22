@@ -24,7 +24,7 @@ function getOrdinal(n) {
   return suffixes[(v - 20) % 10] || suffixes[v] || "th";
 }
 
-// Fetch and Render
+// Fetch and render
 async function fetchData() {
   const loading = document.getElementById("Loading");
   const clist = document.getElementById("clist");
@@ -35,7 +35,7 @@ async function fetchData() {
   loading.style.display = "block";
 
   try {
-    // Fetch all channels in parallel
+    // Fetch all channels at once
     const results = await Promise.all(
       channels.map(async (id, index) => {
         loading.textContent = `${index + 1}/${channels.length} channels fetched...`;
@@ -53,7 +53,7 @@ async function fetchData() {
             pfp: info.snippet.thumbnails.default.url,
           };
         } catch (err) {
-          console.warn(`⚠️ Failed to load ${id}`, err);
+          console.warn(`Failed to load ${id}`, err);
           return null; // skip broken channel
         }
       })
@@ -75,7 +75,7 @@ async function fetchData() {
   }
 }
 
-// Render Function
+// Render function
 function renderList(channels) {
   const clist = document.getElementById("clist");
   clist.innerHTML = ""; // Clear any existing content
@@ -98,5 +98,5 @@ function renderList(channels) {
   });
 }
 
-// === Run on Load ===
+// Run on Load
 fetchData();
