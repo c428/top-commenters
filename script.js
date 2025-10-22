@@ -23,16 +23,14 @@ function getOrdinal(n) {
   return n + (s[(v - 20) % 10] || s[v] || s[0]);
 }
 
-// main fetch and render
+// fetch and render all channels
 async function fetchData() {
   const loading = document.getElementById("Loading");
   const clist = document.getElementById("clist");
-  const top3 = document.getElementById("top3");
 
   // reset UI
   clist.innerHTML = "";
   clist.style.display = "none";
-  top3.style.display = "none";
   loading.style.display = "block";
   loading.textContent = "Fetching channel data...";
 
@@ -63,11 +61,7 @@ async function fetchData() {
       return;
     }
 
-    // show top 3 separately
-    renderTop3(validResults.slice(0, 3));
-
-    // render the rest
-    renderList(validResults.slice(3));
+    renderList(validResults);
 
   } catch (err) {
     console.error("Error fetching channels:", err);
@@ -75,47 +69,31 @@ async function fetchData() {
   } finally {
     loading.style.display = "none";
     clist.style.display = "flex";
-    top3.style.display = "flex";
   }
 }
 
-// render top 3
-function renderTop3(top) {
-  const [first, second, third] = top;
-
-  const firstDiv = document.getElementById("first");
-  const secondDiv = document.getElementById("second");
-  const thirdDiv = document.getElementById("third");
-
-  const makeHTML = (ch, rank) => `
-    <a href="https://www.youtube.com/channel/${ch.id}" target="_blank" rel="noopener noreferrer">
-      <img class="pfp" src="${ch.pfp}" alt="${ch.name}" />
-    </a>
-    <p style="margin:0;font-weight:700;">${rank}. ${ch.name}</p>
-    <p style="margin:0;margin-top:0.3vw;font-size:1.5vw;font-weight:800;">
-      ${numberWithCommas(ch.subs)}
-    </p>
-  `;
-
-  firstDiv.innerHTML = makeHTML(first, "🥇 1st");
-  secondDiv.innerHTML = makeHTML(second, "🥈 2nd");
-  thirdDiv.innerHTML = makeHTML(third, "🥉 3rd");
-}
-
-// render the rest of the channels
+// render all channels, top 3 have different backgrounds
 function renderList(channels) {
   const clist = document.getElementById("clist");
   clist.innerHTML = "";
 
+  const topColors = ["#f3ae00", "#c0c0c0", "#cd7f32"]; // gold, silver, bronze
+
   channels.forEach((ch, i) => {
     const div = document.createElement("div");
     div.className = "ui";
+    
+    // set background color for top 3
+    if (i < 3) {
+      div.style.backgroundColor = topColors[i];
+    }
+
     div.innerHTML = `
       <a href="https://www.youtube.com/channel/${ch.id}" target="_blank" rel="noopener noreferrer">
         <img class="pfp" src="${ch.pfp}" alt="${ch.name}" />
       </a>
       <div class="channelinfo">
-        <p style="margin:0;">${getOrdinal(i + 4)}. ${ch.name}</p>
+        <p style="margin:0;font-weight:700;">${getOrdinal(i + 1)}. ${ch.name}</p>
         <p style="margin:0;margin-top:0.2vw;font-size:2vw;font-weight:800;">
           ${numberWithCommas(ch.subs)}
         </p>
