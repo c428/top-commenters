@@ -77,7 +77,7 @@ function renderList(channels) {
   const clist = document.getElementById("clist");
   clist.innerHTML = "";
 
-  const topColors = ["#b8860b", "#a9a9a9", "#8b4513"]; // gold, silver, bronze
+  const topColors = ["#a2770a", "#696970", "#60300d"]; // gold, silver, bronze
 
   channels.forEach((ch, i) => {
     const div = document.createElement("div");
