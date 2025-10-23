@@ -77,15 +77,18 @@ function renderList(channels) {
   const clist = document.getElementById("clist");
   clist.innerHTML = "";
 
-  const topColors = ["#a2770a", "#696970", "#60300d"]; // gold, silver, bronze
+  const topColors = ["linear-gradient(90deg, #a2770a, #eec600)",
+                     "linear-gradient(90deg, #3d3d3f, #606067)",
+                     "linear-gradient(90deg, #421e08, #67330d)"]; // gold, silver, bronze
 
   channels.forEach((ch, i) => {
     const div = document.createElement("div");
     div.className = "ui";
     
-    // set background color for top 3
+    // set background color and highlight for top 3
     if (i < 3) {
-      div.style.backgroundColor = topColors[i];
+      div.style.background = topColors[i];
+      div.classList.add("top3highlight");
     }
 
     div.innerHTML = `
