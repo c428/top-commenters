@@ -92,8 +92,12 @@ a {
     color: white;
 }
 
-.top3highlight {
+.top3highlight * {
   text-shadow: 0.1vw 0.1vw black;
+}
+
+.top3highlight .pfp {
+  box-shadow: 0.1vw 0.1vw black;
 }
 
 .pfp {
