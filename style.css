@@ -6,7 +6,7 @@ body {
     align-content: center;
     justify-content: center;
     font-family: Be Vietnam Pro;
-    background: rgb(25, 25, 32);
+    background: #18181c;
 }
 
 p {
@@ -14,7 +14,7 @@ p {
 }
 
 a {
-    color: rgb(255, 255, 255);
+    color: #ffffff;
 }
 
 .char {
@@ -54,63 +54,9 @@ a {
     justify-content: center;
 }
 
-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    width: 15vw;
-    padding: 1.5vw;
-    margin: .5vw;
-    margin-bottom: 0;
-    margin-top: 0;
-    font-size: 1vw;
-    border: none;
-    color: white;
-    font-family: Be Vietnam Pro;
-    background: rgb(33, 33, 42);
-    border-radius: 1vw;
-    transition: .5s;
-}
-
-button:hover {
-    transform: scale(1.1);
-}
-
 .characters {
     width: 100%;
     text-align: center;
-}
-
-select {
-    width: 15vw;
-    padding: .7vw;
-    margin-bottom: 0;
-    margin-top: 0;
-    font-size: 1vw;
-    border: none;
-    color: white;
-    font-family: Be Vietnam Pro;
-    background: rgb(33, 33, 42);
-    border-radius: 1vw;
-    transition: .5s;
-}
-
-.charat {
-    display: block;
-    width: fit-content;
-    font-size: 10vw;
-    margin: 0;
-    text-align: center;
-    font-family: Be Vietnam Pro;
-    font-weight: 700;
-    color: #fff4;
-}
-
-.charcon {
-    width: 100%;
-    display: flex;
-    justify-content: center;
 }
 
 .footer {
