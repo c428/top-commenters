@@ -92,6 +92,10 @@ a {
     color: white;
 }
 
+.top3highlight {
+  text-shadow: 0.1vw 0.1vw black;
+}
+
 .pfp {
     width: 6vw;
     height: 6vw;
