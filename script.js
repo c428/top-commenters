@@ -14,25 +14,28 @@ const channels = [
   "UCiBwUTzU7RmyY-T8C6bE5cQ", // NeoRacer
 ];
 
-// utility functions
+// utils
 const numberWithCommas = x => x.toLocaleString("en-US");
-
 function getOrdinal(n) {
   const s = ["th", "st", "nd", "rd"];
   const v = n % 100;
   return n + (s[(v - 20) % 10] || s[v] || s[0]);
 }
 
-// fetch and render all channels
-async function fetchData() {
+// global cache
+let channelData = [];
+
+// fetch data
+async function fetchData(isUpdate = false) {
   const loading = document.getElementById("Loading");
   const clist = document.getElementById("clist");
 
-  // reset UI
-  clist.innerHTML = "";
-  clist.style.display = "none";
-  loading.style.display = "block";
-  loading.textContent = "Fetching channel data...";
+  if (!isUpdate) {
+    clist.innerHTML = "";
+    clist.style.display = "none";
+    loading.style.display = "block";
+    loading.textContent = "Fetching channel data...";
+  }
 
   try {
     const results = await Promise.allSettled(
@@ -61,31 +64,37 @@ async function fetchData() {
       return;
     }
 
-    renderList(validResults);
+    channelData = validResults;
+
+    if (!isUpdate) {
+      renderList(validResults);
+      loading.style.display = "none";
+      clist.style.display = "flex";
+    } else {
+      updateSubs(validResults);
+    }
 
   } catch (err) {
     console.error("Error fetching channels:", err);
-    loading.textContent = "Something went wrong while fetching data.";
-  } finally {
-    loading.style.display = "none";
-    clist.style.display = "flex";
+    if (!isUpdate) loading.textContent = "Something went wrong while fetching data.";
   }
 }
 
-// render all channels, top 3 have different backgrounds
+// render all channels
 function renderList(channels) {
   const clist = document.getElementById("clist");
   clist.innerHTML = "";
 
-  const topColors = ["linear-gradient(90deg, #a2770a, #eec600)",
-                     "linear-gradient(90deg, #3d3d3f, #606067)",
-                     "linear-gradient(90deg, #421e08, #67330d)"]; // gold, silver, bronze
+  const topColors = [
+    "linear-gradient(90deg, #a2770a, #eec600)",
+    "linear-gradient(90deg, #3d3d3f, #606067)",
+    "linear-gradient(90deg, #421e08, #67330d)"
+  ];
 
   channels.forEach((ch, i) => {
     const div = document.createElement("div");
     div.className = "ui";
     
-    // set background color and highlight for top 3
     if (i < 3) {
       div.style.background = topColors[i];
       div.classList.add("top3highlight");
@@ -97,7 +106,7 @@ function renderList(channels) {
       </a>
       <div class="channelinfo">
         <p style="margin:0;font-weight:700;">${getOrdinal(i + 1)}. ${ch.name}</p>
-        <p style="margin:0;margin-top:0.2vw;font-size:2vw;font-weight:800;">
+        <p id="subs-${ch.id}" style="margin:0;margin-top:0.2vw;font-size:2vw;font-weight:800;">
           ${numberWithCommas(ch.subs)}
         </p>
       </div>
@@ -106,5 +115,16 @@ function renderList(channels) {
   });
 }
 
-// run on load
-document.addEventListener("DOMContentLoaded", fetchData);
+// only update subscriber counts
+function updateSubs(channels) {
+  channels.forEach(ch => {
+    const subEl = document.getElementById(`subs-${ch.id}`);
+    if (subEl) subEl.textContent = numberWithCommas(ch.subs);
+  });
+}
+
+// run on load + set 5-second refresh
+document.addEventListener("DOMContentLoaded", async () => {
+  await fetchData();
+  setInterval(() => fetchData(true), 5000);
+});
