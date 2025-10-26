@@ -105,8 +105,8 @@ function renderList(channels) {
         <img class="pfp" src="${ch.pfp}" alt="${ch.name}" />
       </a>
       <div class="channelinfo">
-        <p style="margin:0;font-weight:700;">${getOrdinal(i + 1)}. ${ch.name}</p>
-        <p id="subs-${ch.id}" style="margin:0;margin-top:0.2vw;font-size:2vw;font-weight:800;">
+        <p>${getOrdinal(i + 1)}. ${ch.name}</p>
+        <p id="subs-${ch.id}">
           ${numberWithCommas(ch.subs)}
         </p>
       </div>
