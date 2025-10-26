@@ -13,7 +13,7 @@
   --radius: 1.5vw;
   --pfp-size: 6vw;
   --spacing: 0.5vw;
-  --shadow: 0.15vw 0.15vw 0.35vw rgba(0, 0, 0, 0.5);
+  --shadow: 0.15vw 0.15vw 0.35vw rgba(0, 0, 0, 0.35);
   --transition-time: 0.75s;
   --font-main: "Inter", sans-serif;
 }
