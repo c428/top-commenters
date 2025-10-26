@@ -121,7 +121,7 @@ function renderList(channels) {
 function updateSubs(channels) {
   channels.forEach(ch => {
     const subEl = document.getElementById(`subs-${ch.id}`);
-    if (subEl) subEl.textContent = numberWithCommas(ch.subs);
+    if (subEl) subEl.innerHTML = numberWithCommas(ch.subs);
   });
 }
 
