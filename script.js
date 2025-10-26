@@ -47,7 +47,7 @@ async function fetchData(isUpdate = false) {
         if (!info) throw new Error("Missing data");
         return {
           id,
-          name: info.snippet.title === "null" ? "" : info.snippet.title,
+          name: info.snippet.title === null ? "" : info.snippet.title,
           subs: Number(info.statistics.subscriberCount) || 0,
           pfp: info.snippet.thumbnails.default.url,
         };
