@@ -108,7 +108,7 @@ function renderList(channels) {
       </a>
       <div class="channelinfo">
         <p>${getOrdinal(i + 1)}. ${ch.name}</p>
-        <p class="subCount odometer" id="subs-${ch.id}">
+        <p class="odometer subCount" id="subs-${ch.id}">
           ${numberWithCommas(ch.subs)}
         </p>
       </div>
