@@ -13,7 +13,7 @@
   --radius: 1.5vw;
   --pfp-size: 6vw;
   --spacing: 0.5vw;
-  --shadow: 0.1vw 0.1vw 0.35vw rgba(0, 0, 0, 0.35);
+  --shadow: 0.15vw 0.15vw 0.35vw rgba(0, 0, 0, 0.5);
   --transition-time: 0.75s;
   --font-main: "Inter", sans-serif;
 }
@@ -97,10 +97,12 @@ a {
 
 .top3highlight * {
   text-shadow: var(--shadow);
+  mix-blend-mode: overlay;
 }
 
 .top3highlight .pfp {
   box-shadow: var(--shadow);
+  mix-blend-mode: overlay;
 }
 
 .pfp {
