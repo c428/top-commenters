@@ -95,13 +95,13 @@ a {
   pointer-events: none;
 }
 
-.top3highlight::before * {
+.top3highlight *::before {
   content: "";
   text-shadow: var(--shadow);
   mix-blend-mode: overlay;
 }
 
-.top3highlight::before .pfp {
+.top3highlight.pfp::before {
   content: "";
   box-shadow: var(--shadow);
   mix-blend-mode: overlay;
