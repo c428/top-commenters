@@ -10,11 +10,11 @@
     rgba(255, 255, 255, 0.08) 60%,
     rgba(255, 255, 255, 0.15) 100%
   );
-  --radius: 1vw;
+  --radius: 1.5vw;
   --pfp-size: 6vw;
   --spacing: 0.5vw;
   --shadow: 0.1vw 0.1vw black;
-  --transition-time: 0.5s;
+  --transition-time: 0.75s;
   --font-main: "Inter", sans-serif;
 }
 
