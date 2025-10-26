@@ -4,7 +4,12 @@
   --bg-color: rgb(29, 29, 34);
   --card-bg: rgb(41, 41, 44);
   --text-color: rgb(250, 252, 255);
-  --shine: linear-gradient(120deg, rgba(255, 255, 255, 0%) 0%, rgba(255, 255, 255, 0.08) 60%, rgba(255, 255, 255, 0.15) 100%);
+  --shine: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0%) 0%,
+    rgba(255, 255, 255, 0.1) 60%,
+    rgba(255, 255, 255, 0.2) 60%
+  )
   --radius: 1.5vw;
   --pfp-size: 6vw;
   --spacing: 0.5vw;
