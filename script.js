@@ -3,15 +3,17 @@ const channels = [
   "UCPW_cNzrDSf0xejLOKvV7Cg", // pi
   "UC775DwuDDYTrMRNzAcjcVbw", // MrNoName
   "UCBWMFqHUUcF1NHdLMUhLpEQ", // Headless Commenter
+  "UCgom_YXc5tgNrx9ytccu9Xg", // Angel Niko
   "UC-eHa-b4udma8bGlpPxWB7A", // Dong
+  "UCpT57JyuQSrTvLhquVT096Q", // Shadow
   "UCeDSghsyAtM2B1WezvMcOXw", // GreatBritainTEA
   "UCK83UhfcEsWAzAxuUgZYnwg", // Earth Commenter
-  "UCtkbSqvw_gSWnY4vLpYtK6A", // Happwer
   "UClFDTPiMwDQpppSO-gnkFAQ", // HeisenbergFam
   "UCiTfB-A55Vq2fB610vaWJVA", // Justin Y
-  "UC3BLNSNwSVYeH_-Y52FE6fg", // thatonekid
   "UC3RIcfnBQinhnhKHCIEA16Q", // Just Some Guy without a Mustache
-  "UCiBwUTzU7RmyY-T8C6bE5cQ", // NeoRacer
+  "UCJXhCTH64vJAPlB6ZoS2KZA", // watercat
+  "UCu7uCS2gni38qUtYJshHJ0A", // Xavier
+  "UCwJ55XnPUxSLTCwu-WydD3g", // SAVAGE COMMENTER
 ];
 
 // utils
